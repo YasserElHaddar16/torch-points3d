@@ -15,7 +15,7 @@ dependencies = [
     "torch-sparse @ https://data.pyg.org/whl/torch-2.2.0%2Bcu121/torch_sparse-0.6.18%2Bpt22cu121-cp312-cp312-linux_x86_64.whl",
     "torch-cluster @ https://data.pyg.org/whl/torch-2.2.0%2Bcu121/torch_cluster-1.6.3%2Bpt22cu121-cp312-cp312-linux_x86_64.whl",
     "torch-geometric>=2.5.0",
-    "torch-points-kernels>=0.7.0",
+    "torch-points-kernels @ git+https://github.com/YasserElHaddar16/torch-points-kernels.git",
     "pytorch_metric_learning>=0.9.87",
     
     # Visualization and data processing
