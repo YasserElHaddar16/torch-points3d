@@ -1,4 +1,4 @@
-from torch_geometric.nn import PointConv
+from torch_geometric.nn import PointGNNConv
 
 from torch_points3d.core.base_conv.base_conv import *
 from torch_points3d.core.base_conv.message_passing import *
@@ -17,7 +17,7 @@ class SAModule(BaseMSConvolutionDown):
 
         local_nn = MLP(down_conv_nn) if down_conv_nn is not None else None
 
-        self._conv = PointConv(local_nn=local_nn, global_nn=None)
+        self._conv = PointGNNConv(local_nn=local_nn, global_nn=None)
         self._radius = radius
         self._ratio = ratio
         self._num_points = radius_num_point
