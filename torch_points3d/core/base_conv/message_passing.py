@@ -16,10 +16,19 @@ from torch_points3d.core.common_modules import *
 from torch_points3d.core.spatial_ops import *
 
 
-def copy_from_to(data, batch):
-    for key in data.keys:
-        if key not in batch.keys:
-            setattr(batch, key, getattr(data, key, None))
+def copy_from_to(data, batch_obj):
+    """
+    copy data from a data object to a batch object
+    """
+    # Convert data.keys from method to list if needed
+    keys = data.keys() if callable(data.keys) else data.keys
+    
+    for key in keys:
+        if hasattr(data, key):
+            item = data[key]
+            if torch.is_tensor(item):
+                batch_obj[key] = item
+    return batch_obj
 
 
 #################### THOSE MODULES IMPLEMENTS THE BASE MESSAGE_PASSING CONV API ############################
