@@ -37,7 +37,7 @@ dependencies = [
     "types-six>=0.1.6",
     "types-requests>=0.1.11",
     "laspy>=2.0.3",
-    "numpy>=1.20,<2.0",
+    "numpy<1.20.0",
 ]
 
 [project.optional-dependencies]
@@ -75,6 +75,7 @@ line-length = 120
 requires = [
     "setuptools>=61.0.0",
     "wheel",
-    "numpy>=1.20,<2.0",
+    "numpy>=1.20.0",
+    "torch>=2.2.0"
 ]
 build-backend = "setuptools.build_meta"
