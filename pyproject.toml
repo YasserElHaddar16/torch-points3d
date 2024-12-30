@@ -65,9 +65,8 @@ dev = [
 [project.urls]
 documentation = "https://torch-points3d.readthedocs.io/en/latest/"
 
-[tool.setuptools]
-packages = ["torch_points3d"]
-packages.find.namespace = true
+[tool.setuptools.packages.find]
+include = ["torch_points3d*"]
 
 [tool.black]
 line-length = 120
