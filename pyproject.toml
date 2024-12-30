@@ -68,6 +68,16 @@ documentation = "https://torch-points3d.readthedocs.io/en/latest/"
 [tool.setuptools.packages.find]
 include = ["torch_points3d*"]
 
+[tool.setuptools.package-data]
+"torch_points3d" = [
+    "applications/conf/**/*.yaml",
+    "applications/conf/**/*.yml",
+    "applications/conf/**/*",
+    "*/conf/**/*.yaml",
+    "*/conf/**/*.yml",
+    "*/conf/**/*"
+]
+
 [tool.black]
 line-length = 120
 
